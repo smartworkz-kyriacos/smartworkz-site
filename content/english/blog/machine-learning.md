@@ -2,9 +2,9 @@
 author = "Kyriacos Antoniades"
 bg_image = ""
 categories = []
-date = ""
+date = 2022-10-03T22:00:00Z
 description = "A test for machine learning"
-image = ""
+image = "/images/logo.jpg"
 tags = []
 title = "Machine Learning"
 type = "post"
