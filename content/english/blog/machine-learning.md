@@ -115,11 +115,11 @@ Run the following commands:
 * _Navigate to the_ [_CloudFormation service_](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Feu-west-1.console.aws.amazon.com%2Fcloudformation%2Fhome%3Fregion%3Deu-west-1%26state%3DhashArgs%2523%252F%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fcloudformation&forceMobileApp=0&code_challenge=2wvOgJKH4gI44qKCepanh-y6BA4SLHzP7S2hxNBhcJo&code_challenge_method=SHA-256)
 * _Select Create stack_
 
-!\[\](file:///C:/Users/KyriacosAntoniades/OneDrive%20-%20Smartworkz/Documents/GitHub/mlops-sagemaker-ci-cd/images/01_cloudformation.png?lastModify=1665324242)
+![](/images/01_cloudformation.png)
 
 * _Select Upload template file and upload the YAML file from the infrastructure folder called `infra/pipeline.yml`_
 
-!\[\](file:///C:/Users/KyriacosAntoniades/OneDrive%20-%20Smartworkz/Documents/GitHub/mlops-sagemaker-ci-cd/images/02_cloudformation_create_stack.png?lastModify=1665324242)
+![](/images/02_cloudformation_create_stack.png)
 
 * _Specify the stack details. These include:_
   * **Stack name:** mlpipeline
@@ -129,32 +129,32 @@ Run the following commands:
   * **GitHub Repository:** mlops-sagemaker-ci-cd
   * **Branch:** master (main)
 
-!\[\](file:///C:/Users/KyriacosAntoniades/OneDrive%20-%20Smartworkz/Documents/GitHub/mlops-sagemaker-ci-cd/images/mlops_03_cloudformation_specify_stack.png?lastModify=1665324242)
+![](/images/mlops_03_cloudformation_specify_stack.png)
 
 * _Click Next in the Configure stack options page_
 
-!\[\](file:///C:/Users/KyriacosAntoniades/OneDrive%20-%20Smartworkz/Documents/GitHub/mlops-sagemaker-ci-cd/images/04_cloudformation_configure_stack.png?lastModify=1665324242)
+![](/images/04_cloudformation_configure_stack.png)
 
 * _Acknowledge that CloudFormation might create IAM resources with custom names and click Create stack_
 * _You will see the stack creation which should be complete within some minutes._
 
-!\[\](file:///C:/Users/KyriacosAntoniades/OneDrive%20-%20Smartworkz/Documents/GitHub/mlops-sagemaker-ci-cd/images/06_cloudformation_create_in_progress.png?lastModify=1665324242)
+![](/images/06_cloudformation_create_in_progress.png)
 
 ## 3. Run the MLOps pipeline
 
 This is how your pipeline looks now:
 
-!\[\](file:///C:/Users/KyriacosAntoniades/OneDrive%20-%20Smartworkz/Documents/GitHub/mlops-sagemaker-ci-cd/images/mlops_pipeline.png?lastModify=1665325740)
+![](/images/mlops_pipeline.png)
 
 Now that you created CI/CD pipeline, it's time to start experimenting with it.
 
 * _Navigate to the CodePipeline service_
 
-!\[\](file:///C:/Users/KyriacosAntoniades/OneDrive%20-%20Smartworkz/Documents/GitHub/mlops-sagemaker-ci-cd/images/console-pipeline.png?lastModify=1665325877)
+![](/images/console-pipeline.png)
 
 * _Select your created pipeline_
 
-!\[\](file:///C:/Users/KyriacosAntoniades/OneDrive%20-%20Smartworkz/Documents/GitHub/mlops-sagemaker-ci-cd/images/pipeline-green.png?lastModify=1665325877)
+![](/images/pipeline-green.png)
 
 * The steps include:
   * **Source:** pulls code every time submit changes. Can be triggered manually by clicking on the **Release change** button.
@@ -178,11 +178,11 @@ We will now make changes to this code in order to improve the model. The goal is
   git statusgit add .\`git commit -m "MLOPs code remote upload from the local repository"git push
 * _Navigate to SageMaker Training jobs._
 
-!\[\](file:///C:/Users/KyriacosAntoniades/OneDrive%20-%20Smartworkz/Documents/GitHub/mlops-sagemaker-ci-cd/images/sagemaker-console.png?lastModify=1665326041)
+![](/images/sagemaker-console.png)
 
 * _Check to see Manage Spot Training Savings_
 
-!\[\](file:///C:/Users/KyriacosAntoniades/OneDrive%20-%20Smartworkz/Documents/GitHub/mlops-sagemaker-ci-cd/images/spot-cost.png?lastModify=1665326041)
+![](/images/spot-cost.png)
 
 ## 5. Add the training job dependencies
 
@@ -204,19 +204,34 @@ In this section, you will trigger training jobs from your local machine without 
 
 * _Use or Create_ [_AWS Access keys_](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)
 * _Install_ [_AWS CLI_](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
-* [_Set up_](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) _your AWS CLI_
 
-  aws configure    AWS Access Key ID \[None\]: enter your AWS Access Key ID    AWS Secret Access Key \[None\]: enter your AWS Secret Access Key    Default region name \[None\]: eu-west-1    Default output format \[None\]: json
+[_Set up_](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) _your AWS CLI_
+
+    aws configure    
+
+    AWS Access Key ID [None]: enter your AWS Access Key ID    
+
+    AWS Secret Access Key [None]: enter your AWS Secret Access Key    
+
+    Default region name [None]: eu-west-1    
+
+    Default output format [None]: json
+
 * _Create a virtual environment inside your project_
 
-  cd source    python3 -m venv venv    source venv/bin/activate
+    cd source    
+
+    python3 -m venv venv    
+
+    source venv/bin/activate
+
 * _Install required dependencies_
 
-  pip install -r requirements.txt
+      pip install -r requirements.txt
 * _Navigate to_ [_CloudFormation service stacks_](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Feu-west-1.console.aws.amazon.com%2Fcloudformation%2Fhome%3Fregion%3Deu-west-1%26state%3DhashArgs%2523%252Fstacks%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fcloudformation&forceMobileApp=0&code_challenge=URwODm8u3qJ-reT4-VjJK0HUS2_il02O30dEoJR9G4w&code_challenge_method=SHA-256)
 * _Select the stack created earlier and go to the output section_
 
-!\[\](file:///C:/Users/KyriacosAntoniades/OneDrive%20-%20Smartworkz/Documents/GitHub/mlops-sagemaker-ci-cd/images/output.png?lastModify=1665328879)
+![](/images/output.png)
 
 * _Copy the ExampleLocalCommand_
 
@@ -224,7 +239,7 @@ In this section, you will trigger training jobs from your local machine without 
 * _In the command line replace MODEL-NAME and VERSION and execute_
 * _Navigate to SageMaker Training jobs, check to see Manage Spot Training Savings_
 
-!\[\](file:///C:/Users/KyriacosAntoniades/OneDrive%20-%20Smartworkz/Documents/GitHub/mlops-sagemaker-ci-cd/images/spot-cost-2.png?lastModify=1665330672)
+![](/images/spot-cost-2.png)
 
 ## 7. Deploy with Lambda function
 
@@ -232,7 +247,7 @@ Now that we have a working SageMaker endpoint, we can integrate it with other AW
 
 This architecture will enable us to quickly test our endpoint through a simple `HTTP POST` request.
 
-!\[\](file:///C:/Users/KyriacosAntoniades/OneDrive%20-%20Smartworkz/Documents/GitHub/mlops-sagemaker-ci-cd/images/mlops_lambda.png?lastModify=1665330445)
+![](/images/mlops_lambda.png)
 
 * _Install Chalice_
 
@@ -246,11 +261,24 @@ or run
 
 * _Navigate to your_ [_SageMaker Endpoint_](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Feu-west-1.console.aws.amazon.com%2Fsagemaker%2Fhome%3Fregion%3Deu-west-1%26state%3DhashArgs%2523%252Fendpoints%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fsagemaker&forceMobileApp=0&code_challenge=MSKAxc0JJQj_CobJpfJex4TeYhURJarE2euJ8d6Jfvg&code_challenge_method=SHA-256) _in the AWS console and copy the name of the endpoint_
 
-!\[\](file:///C:/Users/KyriacosAntoniades/OneDrive%20-%20Smartworkz/Documents/GitHub/mlops-sagemaker-ci-cd/images/mlops_endpoint.png?lastModify=1665330445)
+![](/images/mlops_endpoint.png)
 
 * _In the lambda\\.chalice\\config.json update the value of the ENDPOINT_NAME environment variable with the name of your SageMaker endpoint_
 
-  {  "version": "2.0",  "app_name": "predictor",  "autogen_policy": false,  "automatic_layer": true,  "environment_variables": {    "ENDPOINT_NAME": "name-of-your-sagemaker-endpoint"  },  "stages": {    "dev": {      "api_gateway_stage": "api"    }  }}
+      {  
+      "version": "2.0",  
+      "app_name": "predictor",  
+      "autogen_policy": false,  
+      "automatic_layer": true,  
+      "environment_variables": {    
+      	"ENDPOINT_NAME": "name-of-your-sagemaker-endpoint"  
+          },  
+          "stages": {    
+            "dev": {      
+              "api_gateway_stage": "api"    
+            }  
+          }
+       }
 * _Deploy the Lambda function_
 
 Let's now deploy this Lambda by running
