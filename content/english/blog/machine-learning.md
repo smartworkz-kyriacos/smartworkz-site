@@ -172,10 +172,26 @@ We will now make changes to this code in order to improve the model. The goal is
   * `max_wait = 600 # Max training time + spot waiting time`
 * After making these changes your PyTorch estimator should be like this:
 
-  estimator = PyTorch(  entry_point="code/mnist.py",  role=role,  framework_version="1.4.0",  instance_count=2,  instance_type="ml.p3.2xlarge",  py_version="py3",  use_spot_instances=True,  # Use a spot instance  max_run=300,  # Max training time  max_wait=600,  # Max training time + spot waiting time  hyperparameters={"epochs": 14, "backend": "gloo"},)
-* _Commit and push changes to your GitHub repository_. At the Git Bash run the following commands:
+      estimator = PyTorch(  
+      					entry_point="code/mnist.py",  
+                          role=role,  
+                          framework_version="1.4.0",  
+                          instance_count=2,  
+                          instance_type="ml.p3.2xlarge",  
+                          py_version="py3",  
+                          use_spot_instances=True,  # Use a spot instance  
+                          max_run=300,  # Max training time  
+                          max_wait=600,  # Max training time + spot waiting time  
+                          hyperparameters={"epochs": 14, "backend": "gloo"},
+                          )
+* _Commit and push changes to your GitHub repository_. 
 
-  git statusgit add .\`git commit -m "MLOPs code remote upload from the local repository"git push
+  At Git Bash run the following commands:
+
+      git status
+      git add .`
+      git commit -m "MLOPs code remote upload from the local repository"
+      git push
 * _Navigate to SageMaker Training jobs._
 
 ![](/images/sagemaker-console.png)
@@ -235,7 +251,7 @@ In this section, you will trigger training jobs from your local machine without 
 
 * _Copy the ExampleLocalCommand_
 
-  python training.py arn:aws:iam::xxxxxxx:role/mlops-sagemaker-role bucket-name MODEL-NAME VERSION
+      python training.py arn:aws:iam::xxxxxxx:role/mlops-sagemaker-role bucket-name MODEL-NAME VERSION
 * _In the command line replace MODEL-NAME and VERSION and execute_
 * _Navigate to SageMaker Training jobs, check to see Manage Spot Training Savings_
 
