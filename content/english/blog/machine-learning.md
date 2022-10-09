@@ -208,7 +208,19 @@ We will now make changes to this code in order to improve the model. The goal is
 
   Your estimator should now look like this
 
-      estimator = PyTorch(  entry_point="mnist.py",  source_dir="code",  role=role,  framework_version="1.4.0",  instance_count=2,  instance_type="ml.p3.2xlarge",  py_version="py3",  use_spot_instances=True,  # Use a spot instance  max_run=300,  # Max training time  max_wait=600,  # Max training time + spot waiting time  hyperparameters={"epochs": 14, "backend": "gloo"},)
+      estimator = PyTorch(  
+      					entry_point="mnist.py",  
+                          source_dir="code",  
+                          role=role,  f
+                          ramework_version="1.4.0",  
+                          instance_count=2,  
+                          instance_type="ml.p3.2xlarge",  
+                          py_version="py3",  
+                          use_spot_instances=True,  # Use a spot instance  
+                          max_run=300,  # Max training time  
+                          max_wait=600,  # Max training time + spot waiting time  
+                          hyperparameters={"epochs": 14, "backend": "gloo"},
+                          )
 
 In order to do training with your new code, you should just commit and push changes to your GitHub repo as you did before!
 
