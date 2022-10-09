@@ -184,7 +184,7 @@ We will now make changes to this code in order to improve the model. The goal is
                           max_wait=600,  # Max training time + spot waiting time  
                           hyperparameters={"epochs": 14, "backend": "gloo"},
                           )
-* _Commit and push changes to your GitHub repository_. 
+* _Commit and push changes to your GitHub repository_.
 
   At Git Bash run the following commands:
 
@@ -236,23 +236,22 @@ In this section, you will trigger training jobs from your local machine without 
 [_Set up_](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) _your AWS CLI_
 
     aws configure    
-
+    
     AWS Access Key ID [None]: enter your AWS Access Key ID    
-
+    
     AWS Secret Access Key [None]: enter your AWS Secret Access Key    
-
+    
     Default region name [None]: eu-west-1    
-
+    
     Default output format [None]: json
 
 * _Create a virtual environment inside your project_
 
-    cd source    
+  cd source
 
-    python3 -m venv venv    
+  python3 -m venv venv
 
-    source venv/bin/activate
-
+  source venv/bin/activate
 * _Install required dependencies_
 
       pip install -r requirements.txt
