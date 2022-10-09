@@ -299,4 +299,9 @@ Now you can trigger this Lambda function by running included bash script
 
 This script will download an image, and send a `POST` request to your Lambda. The response will contain probabilities for this image and prediction made by the deployed model.
 
-    {   "response" : {      "Probabilities:" : "[[-3.10787258e+01 -1.61031952e+02 -2.43714166e+00 -2.35641022e+01\n  -1.84978195e+02 -9.14689526e-02 -5.73226471e+01 -8.57289124e+01\n  -7.99111023e+01 -9.30446320e+01]]",      "This is your number:" : "5"   }}
+    {   
+    "response" : {      
+    	"Probabilities:" : "[[-3.10787258e+01 -1.61031952e+02 -2.43714166e+00 -2.35641022e+01\n  -1.84978195e+02 -9.14689526e-02 -5.73226471e+01 -8.57289124e+01\n  -7.99111023e+01 -9.30446320e+01]]",      
+        "This is your number:" : "5"   
+        }
+    }
