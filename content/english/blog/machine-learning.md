@@ -61,7 +61,7 @@ type = "post"
 
 ![](/images/full-screen.png)
 
-\*Make sure the Git Bash terminal is in VSC (arrange it side-by-side with the GitHub page). *
+_Make sure the Git Bash terminal is in VSC (arrange it side-by-side with the GitHub page)._
 
 ![](/images/git-bash-vsc.png)
 
@@ -94,7 +94,7 @@ Run the following commands:
 1. In the upper-right corner of any page, click your profile photo, then click **Settings**.
 
    ![Settings icon in the user bar](https://docs.github.com/assets/cb-34573/images/help/settings/userbar-account-settings.png)
-2. In the left sidebar, click **Developer settings**.![Developer settings](https://docs.github.com/assets/cb-6064/images/help/settings/developer-settings.png)
+2. In the left sidebar, click **Developer settings**.
 3. In the left sidebar, click **Personal access tokens**.![Personal access tokens](https://docs.github.com/assets/cb-7169/images/help/settings/personal_access_tokens_tab.png)
 4. Click **Generate new token**.![Generate new token button](https://docs.github.com/assets/cb-6922/images/help/settings/generate_new_token.png)
 5. Give your token a descriptive name.![Token description field](https://docs.github.com/assets/cb-3880/images/help/settings/token_description.png)
@@ -184,7 +184,7 @@ We will now make changes to this code in order to improve the model. The goal is
                           max_wait=600,  # Max training time + spot waiting time  
                           hyperparameters={"epochs": 14, "backend": "gloo"},
                           )
-* _Commit and push changes to your GitHub repository_.
+* _Commit and push changes to your GitHub repository_
 
   At Git Bash run the following commands:
 
@@ -206,7 +206,7 @@ We will now make changes to this code in order to improve the model. The goal is
 * _In the `source\training.py` script update entry_point to `entry_point="mnist.py"`_
 * This line will tell SageMaker to first install defined dependencies from `code/requirements.txt`, and then to upload all code inside of this folder to your container.
 
-  Your estimator should now look like this
+  Your estimator should now look like this:
 
       estimator = PyTorch(  
       					entry_point="mnist.py",  
