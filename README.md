@@ -228,9 +228,9 @@ Selecting GitHub will bring up an authorization modal for authentication. Select
 
 ### Create a New Site with Continuous Deployment
 
-You’re now already a Netlify member and should be brought to your new dashboard. Select “New site from git.”
+You're now already a Netlify member and should be brought to your new dashboard. Select New site from git.
 
-![Screenshot of the blank Netlify admin panel with no sites and highlighted <span class=](https://d33wubrfki0l68.cloudfront.net/1a92de85be074abc024967fa7088c8b719c32466/f7496/images/hosting-and-deployment/hosting-on-netlify/netlify-add-new-site.jpg)&lsquo;‘add new site button" />
+![Screenshot of the blank Netlify admin panel with no sites and highlighted <span class=](https://d33wubrfki0l68.cloudfront.net/1a92de85be074abc024967fa7088c8b719c32466/f7496/images/hosting-and-deployment/hosting-on-netlify/netlify-add-new-site.jpg)
 
 Netlify will then start walking you through the steps necessary for continuous deployment. First, you’ll need to select your git provider again, but this time you are giving Netlify added permissions to your repositories.
 
@@ -244,9 +244,9 @@ Select the repo you want to use for continuous deployment. If you have a large n
 
 ![Screenshot of step 1 of create a new site for Netlify: selecting the git provider](https://d33wubrfki0l68.cloudfront.net/188f9bfa9eb4997757414ec0ac1979d7111c9741/8f7a6/images/hosting-and-deployment/hosting-on-netlify/netlify-create-new-site-step-2.jpg)
 
-Once selected, you’ll be brought to a screen for basic setup. Here you can select the branch you wanted published, your [build command](https://gohugo.io/getting-started/usage/#the-hugo-command), and your publish (i.e. deploy) directory. The publish directory should mirror that of what you’ve set in your [site configuration](https://gohugo.io/getting-started/configuration/), the default of which is `public`. The following steps assume you are publishing from the `master` branch.
+Once selected, you’ll be brought to a screen for basic setup. Here you can select the branch you wanted published, your [build command](https://gohugo.io/getting-started/usage/#the-hugo-command), and your publish (i.e. deploy) directory. The publish directory should mirror that of what you've set in your [site configuration](https://gohugo.io/getting-started/configuration/), the default of which is `public`. The following steps assume you are publishing from the `master` branch.
 
-Configure Hugo Version in Netlify
+### Configure Hugo Version in Netlify
 
 You can [set Hugo version](https://www.netlify.com/blog/2017/04/11/netlify-plus-hugo-0.20-and-beyond/) for your environments in `netlify.toml` file or set `HUGO_VERSION` as a build environment variable in the Netlify console.
 
@@ -310,7 +310,7 @@ to = "/npmjs/"
 status = 200
 ```
 
-Build and Deploy Site
+### Build and Deploy Site
 
 In the Netlify console, selecting “Deploy site” will immediately take you to a terminal for your build:.
 
