@@ -58,12 +58,12 @@ Smartworkz's static (web) site is based on the following integrations:
   Clones the repository in the local git repository path
 
   ![1665576298128](image/README/1665576298128.png)
-* `cd` into site
+* *`cd` into site*
 
   ![1665576668407](image/README/1665576668407.png)
 
   `cd smartworkz-site`
-* Check status
+* *Check status*
 
   ![1665576391255](image/README/1665576391255.png)
 
@@ -81,18 +81,85 @@ Smartworkz's static (web) site is based on the following integrations:
   ![1665576788318](image/README/1665576788318.png)
 * *Open and log in to your [GitHub account](https://github.com/)*
 * *Create a GitHub repository for the generated static (web) site files*
-  Let the repository itself to remain as default Public
+  Let the repository itself to remain default as Public
   ![1665578273247](image/README/1665578273247.png)
 
-  The name of this repository follows the format `<USERNAME>.github.io`
-* 
-* 
-* 
-* 
+  The name of this repository follows the format
 
-### Local hosting
+  `<USERNAME>`.`github.io`
 
-To start, use the following command: hugo server This will set up the site locally and allow it to be viewed at the address specified in the shell (usually http://localhost:1313).
+  Replace with your own `<USERNAME>`
+* Return to the terminal and change to the local Git directory for your `<USERNAME>`.`github.io` hosting site `cmd` in and `code .` to open in VSC
+
+  ![1665579741660](image/README/1665579741660.png)
+* *Clone your previous GitHub tepository with Smartworkz's template containing all static (web) files in your  `<USERNAME>`.`github.io` local Git repository*
+
+  `git clone https://github.com/smartworkz-kyriacos/smartworkz-site.git`
+
+  ![1665579987941](image/README/1665579987941.png)
+* *Check that the template site is functioning*
+
+  ![1665581649891](image/README/1665581649891.png) `hugo server -D`
+
+  This will set up the site locally and allow it to be viewed at the address specified in the shell (http://localhost:1313). Observe the `/public` folder created:
+
+  ![1665582084746](image/README/1665582084746.png)
+* *Generate the static files of the web site and push it to the `<USERNAME>.github.io` repository*
+
+  1. Remove the `public` directory in case as it was created with Hugo previously
+
+     `rm -rf public`
+  2. Generate the actual website files in your site project directory in a subdirectory called `public/` with a submodule repository
+
+     `git submodule add -b main https://github.com/<USERNAME>/<USERNAME>.github.io.git public`
+
+  Git submodules are  nested repositories. By making the `.github.io` repository a submodule of the `smartworkz-site` repository, we' re replicating the structure Hugo uses by making the rendered website files in a `/public/` subdirectory inside the site project directory `smartworkz-site` itself.
+* *Deploy to `<USERNAME>`.`github.io` by running the following commands:*
+
+  ```
+  hugo
+  cd public
+  git add .
+  git commit -m "write a commit message here to describe the changes"
+  git push origin main
+  ```
+* *Automate deployment by creating a bash file `deploy.sh` file*
+
+  ```
+  #!/bin/sh
+
+  # If a command fails then the deploy stops
+  set -e
+
+  printf "\033[0;32mDeploying updates to GitHub...\033[0m\n"
+
+  # Build the project.
+  hugo # if using a theme, replace with `hugo -t <YOURTHEME>`
+
+  # Go To Public folder
+  cd public
+
+  # Add changes to git.
+  git add .
+
+  # Commit changes.
+  msg="rebuilding site $(date)"
+  if [ -n "$*" ]; then
+  	msg="$*"
+  fi
+  git commit -m "$msg"
+
+  # Push source and build repos.
+  git push origin master
+  ```
+* *Run deployment by typing:*
+
+  `./deploy.sh "write a commit message here to describe the changes you made"`
+
+
+Changes are live shortly at `https://<USERNAME>.github.io` 
+
+
 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6eac4cea-1da3-46fd-9213-24c3114d204e/deploy-status)](https://app.netlify.com/sites/boring-heisenberg-e4c346/deploys)
