@@ -154,10 +154,6 @@ Smartworkz's static (web) site is based on the following integrations:
 
   `./deploy.sh "write a commit message here to describe the changes you made"`
 
-Changes should be live shortly at `https://<USERNAME>.github.io` (a hard refresh might be necessary). Future edits will only require this single line invoking the deploy script.
-
-Push changes to the site project repository as well by using the `git add .`, `git commit -m "a commit message"`, and `git push origin master` commands in order. It is important to keep this repository up to date with local changes because these are the files from which the website repository is generated (they also contain any draft posts/pages). Should something happen to the files on your local computer, you will be able to `git pull` or `git clone` them again to recover them.
-
 Changes will be live shortly at your  `https://<USERNAME>.github.io` with any changes everytime you deploy your GitHub Pages
 
 ## Hugo and Forestry Integration
