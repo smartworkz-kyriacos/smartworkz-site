@@ -250,64 +250,16 @@ Once selected, you’ll be brought to a screen for basic setup. Here you can sel
 
 You can [set Hugo version](https://www.netlify.com/blog/2017/04/11/netlify-plus-hugo-0.20-and-beyond/) for your environments in `netlify.toml` file or set `HUGO_VERSION` as a build environment variable in the Netlify console.
 
-For production:
-
-netlify.toml
-
-```toml
-[context.production.environment]
-  HUGO_VERSION = "0.83.1"
-```
-
-For testing:
-
-netlify.toml
-
-```toml
-[context.deploy-preview.environment]
-  HUGO_VERSION = "0.83.1"
-```
-
-The Netlify configuration file can be a little hard to understand and get right for the different environment, and you may get some inspiration and tips from this site’s `netlify.toml`:
-
-netlify.toml
+For development `netlify.toml`:
 
 ```toml
 [build]
-publish = "public"
-command = "hugo --gc --minify"
-
-[context.production.environment]
-HUGO_VERSION = "0.104.3"
-HUGO_ENV = "production"
-HUGO_ENABLEGITINFO = "true"
-
-[context.split1]
-command = "hugo --gc --minify --enableGitInfo"
-
-[context.split1.environment]
-HUGO_VERSION = "0.104.3"
-HUGO_ENV = "production"
-
-[context.deploy-preview]
-command = "hugo --gc --minify --buildFuture -b $DEPLOY_PRIME_URL"
-
-[context.deploy-preview.environment]
-HUGO_VERSION = "0.104.3"
-
-[context.branch-deploy]
-command = "hugo --gc --minify -b $DEPLOY_PRIME_URL"
-
-[context.branch-deploy.environment]
-HUGO_VERSION = "0.104.3"
-
-[context.next.environment]
-HUGO_ENABLEGITINFO = "true"
-
-[[redirects]]
-from = "/npmjs/*"
-to = "/npmjs/"
-status = 200
+  publish = "public"
+  command = "hugo --gc --minify"
+  
+[build.environment]
+  HUGO_VERSION = "0.84.1"
+  HUGO_THEME = "educenter"
 ```
 
 ### Build and Deploy Site
