@@ -280,10 +280,6 @@ Now every time you push changes to your hosted git repository, Netlify will rebu
 
 See [this blog post](https://www.netlify.com/blog/2017/04/11/netlify-plus-hugo-0.20-and-beyond/) for more details about how Netlify handles Hugo versions.
 
-## **Summary:**
-
-<iframe width="560" height="315" src="https://www.youtube.com/embed/ResipmZmpDU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
-
 ### Next Steps
 
 You now have a live website served over HTTPS, distributed through CDN, and configured for continuous deployment. Dig deeper into the Netlify documentation:
