@@ -121,7 +121,7 @@ This will set up the site locally and allow it to be viewed at the address speci
 
 ![1665582084746](image/README/1665582084746.png)
 
-### *Generate the static files of the web site and push it to the `<USERNAME>.github.io` repository*
+### *Generate the static files and push it to the `<USERNAME>.github.io` repository*
 
 1. Remove the `public` directory in case as it was created with Hugo previously
 
@@ -328,39 +328,6 @@ Now every time you push changes to your hosted git repository, Netlify will rebu
 
 See [this blog post](https://www.netlify.com/blog/2017/04/11/netlify-plus-hugo-0.20-and-beyond/) for more details about how Netlify handles Hugo versions.
 
-### Use Hugo Themes with Netlify
-
-The [`git clone` method for installing themes](https://gohugo.io/themes/installing/) is not supported by Netlify. If you were to use `git clone`, it would require you to recursively remove the `.git` subdirectory from the theme folder and would therefore prevent compatibility with future versions of the theme.
-
-A *better* approach is to install a theme as a proper git submodule. You can [read the GitHub documentation for submodules](https://github.com/blog/2104-working-with-submodules) or those found on [Git’s website](https://git-scm.com/book/en/v2/Git-Tools-Submodules) for more information, but the command is similar to that of `git clone`:
-
-```
-cd themes
-git submodule add https://github.com/<THEMECREATOR>/<THEMENAME>
-```
-
-It is recommended to only use stable versions of a theme (if it’s versioned) and always check the changelog. This can be done by checking out a specific release within the theme’s directory.
-
-Switch to the theme’s directory and list all available versions:
-
-```
-cd themes/<theme>
-git tag
-# exit with q
-```
-
-You can checkout a specific version as follows:
-
-```
-git checkout tags/<version-name>
-```
-
-You can update a theme to the latest version by executing the following command in the *root* directory of your project:
-
-```
-git submodule update --rebase --remote
-```
-
 ### Next Steps
 
 You now have a live website served over HTTPS, distributed through CDN, and configured for continuous deployment. Dig deeper into the Netlify documentation:
@@ -368,13 +335,5 @@ You now have a live website served over HTTPS, distributed through CDN, and conf
 1. [Using a Custom Domain](https://www.netlify.com/docs/custom-domains/)
 2. [Setting up HTTPS on Custom Domains](https://www.netlify.com/docs/ssl/)
 3. [Redirects and Rewrite Rules](https://www.netlify.com/docs/redirects/)
-
-### See Also
-
-* [Hosting on KeyCDN](https://gohugo.io/hosting-and-deployment/hosting-on-keycdn/)
-* [Host on 21YunBox](https://gohugo.io/hosting-and-deployment/hosting-on-21yunbox/)
-* [Host on Render](https://gohugo.io/hosting-and-deployment/hosting-on-render/)
-* [Hugo Deploy](https://gohugo.io/hosting-and-deployment/hugo-deploy/)
-* [Host on AWS Amplify](https://gohugo.io/hosting-and-deployment/hosting-on-aws-amplify/)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6eac4cea-1da3-46fd-9213-24c3114d204e/deploy-status)](https://app.netlify.com/sites/boring-heisenberg-e4c346/deploys)
