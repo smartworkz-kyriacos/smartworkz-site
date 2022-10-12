@@ -157,7 +157,7 @@ Smartworkz's static (web) site is based on the following integrations:
   `./deploy.sh "write a commit message here to describe the changes you made"`
 
 
-Changes are live shortly at `https://<USERNAME>.github.io` 
+Changes will be live shortly at your  `https://<USERNAME>.github.io` with any changes everytime you deploy your GitHub Pages
 
 
 
