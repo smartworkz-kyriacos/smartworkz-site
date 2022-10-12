@@ -272,9 +272,7 @@ Once the build is finished—this should only take a few seconds–you should no
 
 ![Screenshot of successful deploy badge at the top of a deployments screen from within the Netlify admin.](https://d33wubrfki0l68.cloudfront.net/e2ea775b0985b93f2e0d7c88ae134e90c3e7446e/8a3d7/images/hosting-and-deployment/hosting-on-netlify/netlify-deploy-published.jpg)
 
-![Screenshot of homepage to https://hugo-netlify-example.netlify.com, which is mostly dummy text](https://d33wubrfki0l68.cloudfront.net/1fa530a19d8ae48c9c65021605f2cece4542b402/e97bd/images/hosting-and-deployment/hosting-on-netlify/netlify-live-site.jpg)
-
-[Visit the live site](https://hugo-netlify-example.netlify.com/).
+[Visit the live site](https://smartworkz.netlify.app/).
 
 Now every time you push changes to your hosted git repository, Netlify will rebuild and redeploy your site.
 
