@@ -109,7 +109,7 @@ Smartworkz's static (web) site is based on the following integrations:
   1. Remove the `public` directory in case as it was created with Hugo previously
 
      `rm -rf public`
-  2. Generate the actual website files in your site project directory in a subdirectory called `public/` with a submodule repository
+  2. Generate the actual website files in your site project directory in a subdirectory called `public/` with a submodule repository (**note:** *below is a one-line code*)
 
      `git submodule add -b main https://github.com/<USERNAME>/<USERNAME>.github.io.git public`
 
