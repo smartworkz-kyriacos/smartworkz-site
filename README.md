@@ -25,7 +25,7 @@ Smartworkz's static (web) site is based on the following integrations:
 
 ## Hugo and GitHub Pages
 
-* *Navifate to your local Git repository*
+* *Navigate to your local Git repository*
 
   ![1665575311635](image/README/1665575311635.png)
 * `cmd` *in your File Explorer path and press the Enter key*
@@ -158,5 +158,20 @@ Changes will be live shortly at your  `https://<USERNAME>.github.io` with any ch
 
 ## Hugo and Forestry Integration
 
+* *Open and log in to your [Forestry account](https://forestry.io/)*
+
+  ![1665589284887](image/README/1665589284887.png)
+* *Click Add Site, Select Hugo as your static site generator*
+
+  ![1665589515586](image/README/1665589515586.png)
+* Select GitHub as your git provider
+
+  ![1665589621922](image/README/1665589621922.png)
+* *Choose Git repository*
+
+  ![1665589776333](image/README/1665589776333.png)
+
+  You now have GitHub Pages hosted website using Hugo and Forestry.io as your CMS. Any changes you make using Forestry will auto-commit to your project repository. `git pull` once you're done editing your site content with Forestry.
+* 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6eac4cea-1da3-46fd-9213-24c3114d204e/deploy-status)](https://app.netlify.com/sites/boring-heisenberg-e4c346/deploys)
