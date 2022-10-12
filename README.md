@@ -1,5 +1,7 @@
 # Hugo on GitHub Pages with Forestry and Netlify
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/7d3e4337-98ef-4936-a41b-93a11e98b379/deploy-status)](https://app.netlify.com/sites/smartworkz/deploys)
+
 ![1665592517375](image/README/1665592517375.png)
 
 Smartworkz's static (web) site is based on the following integrations:
@@ -272,7 +274,7 @@ Once the build is finished—this should only take a few seconds–you should no
 
 ![Screenshot of successful deploy badge at the top of a deployments screen from within the Netlify admin.](https://d33wubrfki0l68.cloudfront.net/e2ea775b0985b93f2e0d7c88ae134e90c3e7446e/8a3d7/images/hosting-and-deployment/hosting-on-netlify/netlify-deploy-published.jpg)
 
-[Visit the live site](https://smartworkz.netlify.app/).
+[Visit the live site](https://smartworkz.netlify.app/)
 
 Now every time you push changes to your hosted git repository, Netlify will rebuild and redeploy your site.
 
@@ -285,5 +287,3 @@ You now have a live website served over HTTPS, distributed through CDN, and conf
 1. [Using a Custom Domain](https://www.netlify.com/docs/custom-domains/)
 2. [Setting up HTTPS on Custom Domains](https://www.netlify.com/docs/ssl/)
 3. [Redirects and Rewrite Rules](https://www.netlify.com/docs/redirects/)
-
-[![Netlify Status](https://api.netlify.com/api/v1/badges/6eac4cea-1da3-46fd-9213-24c3114d204e/deploy-status)](https://app.netlify.com/sites/boring-heisenberg-e4c346/deploys)
