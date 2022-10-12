@@ -23,7 +23,7 @@ Smartworkz's static (web) site is based on the following integrations:
   3. Type the following, Terminal: Select Default Profile
   4. Select from the dropdown, Git Bash
 
-## Getting started
+## Hugo and GitHub Pages
 
 * *Navifate to your local Git repository*
 
@@ -76,9 +76,7 @@ Smartworkz's static (web) site is based on the following integrations:
   ls
   ls -la
   ```
-* *Check smartworkz-site tree view*
-
-  ![1665576788318](image/README/1665576788318.png)
+* *Check smartworkz-site tree view*![1665576788318](image/README/1665576788318.png)
 * *Open and log in to your [GitHub account](https://github.com/)*
 * *Create a GitHub repository for the generated static (web) site files*
   Let the repository itself to remain default as Public
@@ -156,10 +154,13 @@ Smartworkz's static (web) site is based on the following integrations:
 
   `./deploy.sh "write a commit message here to describe the changes you made"`
 
+Changes should be live shortly at `https://<USERNAME>.github.io` (a hard refresh might be necessary). Future edits will only require this single line invoking the deploy script.
+
+Push changes to the site project repository as well by using the `git add .`, `git commit -m "a commit message"`, and `git push origin master` commands in order. It is important to keep this repository up to date with local changes because these are the files from which the website repository is generated (they also contain any draft posts/pages). Should something happen to the files on your local computer, you will be able to `git pull` or `git clone` them again to recover them.
 
 Changes will be live shortly at your  `https://<USERNAME>.github.io` with any changes everytime you deploy your GitHub Pages
 
-
+## Hugo and Forestry Integration
 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/6eac4cea-1da3-46fd-9213-24c3114d204e/deploy-status)](https://app.netlify.com/sites/boring-heisenberg-e4c346/deploys)
