@@ -1,6 +1,6 @@
 # Hugo on GitHub Pages with Forestry and Netlify
 
-![1665573005176](image/README/1665573005176.png)
+![1665592239827](image/README/1665592239827.png)
 
 Smartworkz's static (web) site is based on the following integrations:
 
