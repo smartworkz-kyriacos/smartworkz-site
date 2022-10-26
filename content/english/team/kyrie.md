@@ -6,7 +6,7 @@ course = "MLOps"
 description = "test"
 image = ""
 interest = []
-title = "Kyrie"
+title = "kyrie"
 
 +++
 test
