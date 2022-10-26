@@ -18,7 +18,7 @@ type = "post"
 * We will download code from an S3 bucket to use throughout this workshop.
 * It contains image classification (MNIST) code using ConvNets based on [PyTorch examples,](https://github.com/pytorch/examples) and a CloudFormation stack.
 
-![](images/minst.png)
+![](static/images/minst.png)
 
 * You will push this code to your GitHub repository as an initial step to create CI/CD pipeline.
 
@@ -179,10 +179,11 @@ Now that you created CI/CD pipeline, it's time to start experimenting with it.
 
 * 
 
-  ## The steps include:
-  * **Source:** pulls code every time submit changes. Can be triggered manually by clicking on the **Release change** button.
-  * **Build_and_train:** executes the `source\training.py` script. This downloads the data uploads to an S3 bucket creates a training job and deploys the model
-  * **Test_Model:** executes the `source\test.py`  script that performs a basic test of the deployed model
+## The steps include:
+
+* **Source:** pulls code every time submit changes. Can be triggered manually by clicking on the **Release change** button.
+* **Build_and_train:** executes the `source\training.py` script. This downloads the data uploads to an S3 bucket creates a training job and deploys the model
+* **Test_Model:** executes the `source\test.py`  script that performs a basic test of the deployed model
 
 We will now make changes to this code in order to improve the model. The goal is to show you how you can focus on model implementation, and have CodePipeline perform training steps automatically every time you push changes to the GitHub repo.
 
@@ -281,8 +282,7 @@ In this section, you will trigger training jobs from your local machine without 
 
 * _Install required dependencies_
 
-    pip install -r requirements.txt
-
+  pip install -r requirements.txt
 * _Navigate to_ [_CloudFormation service stacks_](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Feu-west-1.console.aws.amazon.com%2Fcloudformation%2Fhome%3Fregion%3Deu-west-1%26state%3DhashArgs%2523%252Fstacks%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fcloudformation&forceMobileApp=0&code_challenge=URwODm8u3qJ-reT4-VjJK0HUS2_il02O30dEoJR9G4w&code_challenge_method=SHA-256)
 * _Select the stack created earlier and go to the output section_
 
@@ -311,7 +311,7 @@ This architecture will enable us to quickly test our endpoint through a simple `
 
   Go to the `lambda` folder and install `chalice`
 
-    pip install -r requirements-dev.txt
+  pip install -r requirements-dev.txt
 
 or run
 
@@ -323,21 +323,20 @@ or run
 
 * _In the lambda\\.chalice\\config.json update the value of the ENDPOINT_NAME environment variable with the name of your SageMaker endpoint_
 
-    {
-      "version": "2.0",
-      "app_name": "predictor",
-      "autogen_policy": false,
-      "automatic_layer": true,
-      "environment_variables": {
-        "ENDPOINT_NAME": "name-of-your-sagemaker-endpoint"
-      },
-      "stages": {
-        "dev": {
-          "api_gateway_stage": "api"
-        }
-      }
-    }
-
+  {
+  "version": "2.0",
+  "app_name": "predictor",
+  "autogen_policy": false,
+  "automatic_layer": true,
+  "environment_variables": {
+  "ENDPOINT_NAME": "name-of-your-sagemaker-endpoint"
+  },
+  "stages": {
+  "dev": {
+  "api_gateway_stage": "api"
+  }
+  }
+  }
 * _Deploy the Lambda function_
 
 Let's now deploy this Lambda by running
