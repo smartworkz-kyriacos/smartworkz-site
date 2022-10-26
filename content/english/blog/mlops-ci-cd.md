@@ -10,59 +10,58 @@ title = "MLOps CI/CD"
 type = "post"
 
 +++
-# MLOps with CI/CD from local Git repository
+# MLOps with CI/CD
 
 **A hands-on lab to train, deploy, and host your models on AWS.**
 
-- We will download code from an S3 bucket to use throughout this workshop.
-- It contains image classification (MNIST) code using ConvNets based on [PyTorch examples,](https://github.com/pytorch/examples) and a CloudFormation stack.
+* We will download code from an S3 bucket to use throughout this workshop.
+* It contains image classification (MNIST) code using ConvNets based on [PyTorch examples,](https://github.com/pytorch/examples) and a CloudFormation stack.
 
 ![](images/minst.png)
 
-- You will push this code to your GitHub repository as an initial step to create CI/CD pipeline.
+* You will push this code to your GitHub repository as an initial step to create CI/CD pipeline.
 
 ## 1. Prerequisites
 
-- *Open and log in to your [AWS account](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fus-east-1.console.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26nc2%3Dh_ct%26region%3Dus-east-1%26skipRegion%3Dtrue%26src%3Dheader-signin%26state%3DhashArgsFromTB_us-east-1_69d8e4b4ab0e37a6&client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&forceMobileApp=0&code_challenge=uRVQqhamdm60rHPKKXydxDu4E3wcQICknuXn1V8seVo&code_challenge_method=SHA-256 "_blank") (eu-west-1)*
-- *Open and log in to your [GitHub account](https://github.com/)*
-- If not already done, *Install [Visual Studio Code](https://code.visualstudio.com/download) (VSC)*
-- If not already done, *Install [Git Bash](https://git-scm.com/downloads)*
-- *(Optional) Configure Git Bash as the default terminal for VSC*
-
+* _Open and log in to your_ [_AWS account_](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Fus-east-1.console.aws.amazon.com%2Fconsole%2Fhome%3FhashArgs%3D%2523%26isauthcode%3Dtrue%26nc2%3Dh_ct%26region%3Dus-east-1%26skipRegion%3Dtrue%26src%3Dheader-signin%26state%3DhashArgsFromTB_us-east-1_69d8e4b4ab0e37a6&client_id=arn%3Aaws%3Asignin%3A%3A%3Aconsole%2Fcanvas&forceMobileApp=0&code_challenge=uRVQqhamdm60rHPKKXydxDu4E3wcQICknuXn1V8seVo&code_challenge_method=SHA-256 "_blank") _(eu-west-1)_
+* _Open and log in to your_ [_GitHub account_](https://github.com/)
+* If not already done, _Install_ [_Visual Studio Code_](https://code.visualstudio.com/download) _(VSC)_
+* If not already done, _Install_ [_Git Bash_](https://git-scm.com/downloads)
+* _(Optional) Configure Git Bash as the default terminal for VSC_
   1. Click View, Terminal
   2. After the Terminal appears, press the F1 key
   3. Type the following, Terminal: Select Default Profile
   4. Select from the dropdown, Git Bash
-- **Either,** clone the GitHub repository in the local Git repository
+* **Either,** clone the GitHub repository in the local Git repository
 
 ```shell
 git clone https://github.com/smartworkz-kyriacos/mlops-sagemaker-ci-cd.git
 ```
 
-- **Or**, *download the [code](), and unzip it in the local Git repository folder path*.
-- Then *`cmd` from File Explorer in the path field*
+* **Or**, _download the_ [_code_]()_, and unzip it in the local Git repository folder path_.
+* Then _`cmd` from File Explorer in the path field_
 
 1. Using File Explorer navigate to the local Git Repository
 
 ![](images/Git-Repository.png)
 
-2. In the path field type cmd and press the Enter key
+1. In the path field type cmd and press the Enter key
 
 ![](images/cmd.png)
 
-- A cmd window opens in the repository path.
+* A cmd window opens in the repository path.
 
 ![](images/Win_Cmd-Prompt.png)
 
-- *Type `code .` in the cmd window prompt with the path*
+* _Type `code .` in the cmd window prompt with the path_
 
 ![](images/code.png)
 
-- VSC opens automatically.
+* VSC opens automatically.
 
 ![](images/vsc.png)
 
-- *Open* your GitHub account Repositories page
+* _Open_ your GitHub account Repositories page
 
 ![](images/Full-Screen.png)
 
@@ -100,7 +99,7 @@ git commit -m "MLOPs code remote upload from the local repository"
 git push
 ```
 
-- *Create a GitHub  Personal Access Token (PAT)*
+* _Create a GitHub  Personal Access Token (PAT)_
 
 1. In the upper-right corner of any page, click your profile photo, then click **Settings**.
 
@@ -129,35 +128,35 @@ git push
 
    **Warning:** Treat your tokens like passwords and keep them secret. When working with the API, use tokens as environment variables instead of hardcoding them into your programs.
 
-- Save locally e.g. in a text file. Will be used shortly to specify in the stack details later.
+* Save locally e.g. in a text file. Will be used shortly to specify in the stack details later.
 
 ## 2. Create the MLOps pipeline
 
-- *Navigate to the [CloudFormation service](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Feu-west-1.console.aws.amazon.com%2Fcloudformation%2Fhome%3Fregion%3Deu-west-1%26state%3DhashArgs%2523%252F%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fcloudformation&forceMobileApp=0&code_challenge=2wvOgJKH4gI44qKCepanh-y6BA4SLHzP7S2hxNBhcJo&code_challenge_method=SHA-256)*
-- *Select Create stack*
+* _Navigate to the_ [_CloudFormation service_](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Feu-west-1.console.aws.amazon.com%2Fcloudformation%2Fhome%3Fregion%3Deu-west-1%26state%3DhashArgs%2523%252F%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fcloudformation&forceMobileApp=0&code_challenge=2wvOgJKH4gI44qKCepanh-y6BA4SLHzP7S2hxNBhcJo&code_challenge_method=SHA-256)
+* _Select Create stack_
 
 ![](images/01_cloudformation.png)
 
-- *Select Upload template file and upload the YAML file from the infrastructure folder called `infra/pipeline.yml`*
+* _Select Upload template file and upload the YAML file from the infrastructure folder called `infra/pipeline.yml`_
 
 ![](images/02_cloudformation_create_stack.png)
 
-- *Specify the stack details. These include:*
-  - **Stack name:** mlpipeline
-  - **Email:** {Your email} (to receive SNS notification)
-  - **GitHub Token:** {previously generated and saved locally}
-  - **GitHub User:** {Your user id}
-  - **GitHub Repository:** mlops-sagemaker-ci-cd
-  - **Branch:** master (main)
+* _Specify the stack details. These include:_
+  * **Stack name:** mlpipeline
+  * **Email:** {Your email} (to receive SNS notification)
+  * **GitHub Token:** {previously generated and saved locally}
+  * **GitHub User:** {Your user id}
+  * **GitHub Repository:** mlops-sagemaker-ci-cd
+  * **Branch:** master (main)
 
 ![](images/mlops_03_cloudformation_specify_stack.png)
 
-- *Click Next in the Configure stack options page*
+* _Click Next in the Configure stack options page_
 
 ![](images/04_cloudformation_configure_stack.png)
 
-- *Acknowledge that CloudFormation might create IAM resources with custom names and click Create stack*
-- *You will see the stack creation which should be complete within some minutes.*
+* _Acknowledge that CloudFormation might create IAM resources with custom names and click Create stack_
+* _You will see the stack creation which should be complete within some minutes._
 
 ![](images/06_cloudformation_create_in_progress.png)
 
@@ -165,36 +164,35 @@ git push
 
 This is how your pipeline looks now:
 
-<img src="images\mlops_pipeline.png" style="zoom:50%;" />
+<img src="images\\mlops_pipeline.png" style="zoom:50%;" />
 
 Now that you created CI/CD pipeline, it's time to start experimenting with it.
 
-- *Navigate to the CodePipeline service*
+* _Navigate to the CodePipeline service_
 
 <img src="images/console-pipeline.png" style="zoom:100%;" />
 
-- *Select your created pipeline*
+* _Select your created pipeline_
 
 ![](images/pipeline-green.png)
 
-- The steps include:
-  ------------------
+* 
 
-  - **Source:** pulls code every time submit changes. Can be triggered manually by clicking on the **Release change** button.
-  - **Build_and_train:** executes the `source\training.py` script. This downloads the data uploads to an S3 bucket creates a training job and deploys the model
-  - **Test_Model:** executes the `source\test.py`  script that performs a basic test of the deployed model
+  ## The steps include:
+  * **Source:** pulls code every time submit changes. Can be triggered manually by clicking on the **Release change** button.
+  * **Build_and_train:** executes the `source\training.py` script. This downloads the data uploads to an S3 bucket creates a training job and deploys the model
+  * **Test_Model:** executes the `source\test.py`  script that performs a basic test of the deployed model
 
 We will now make changes to this code in order to improve the model. The goal is to show you how you can focus on model implementation, and have CodePipeline perform training steps automatically every time you push changes to the GitHub repo.
 
 ## 4. Use GPU and Spot instances
 
-- *Modify `instance_type = "ml.p3.2xlarge"` in the `source\training.py` script*
-- *In the `source\training.py` script uncomment these lines:*
-
-  - `use_spot_instances = True	# Use a spot instance`
-  - `max_run = 300 			# Max training time`
-  - `max_wait = 600 			# Max training time + spot waiting time`
-- After making these changes your PyTorch estimator should be like this:
+* _Modify `instance_type = "ml.p3.2xlarge"` in the `source\training.py` script_
+* _In the `source\training.py` script uncomment these lines:_
+  * `use_spot_instances = True	# Use a spot instance`
+  * `max_run = 300 			# Max training time`
+  * `max_wait = 600 			# Max training time + spot waiting time`
+* After making these changes your PyTorch estimator should be like this:
 
 ```shell
 estimator = PyTorch(
@@ -211,7 +209,7 @@ estimator = PyTorch(
 )
 ```
 
-- *Commit and push changes to your GitHub repository*. At the Git Bash run the following commands:
+* _Commit and push changes to your GitHub repository_. At the Git Bash run the following commands:
 
 ```shell
 git status
@@ -220,19 +218,19 @@ git commit -m "MLOPs code remote upload from the local repository"
 git push
 ```
 
-- *Navigate to SageMaker Training jobs.*
+* _Navigate to SageMaker Training jobs._
 
 ![](images/sagemaker-console.png)
 
-- *Check to see Manage Spot Training Savings*
+* _Check to see Manage Spot Training Savings_
 
 ![](images/spot-cost.png)
 
 ## 5. Add the training job dependencies
 
-- *In the `source\training.py` script uncomment the following line `source_dir = "code`*
-- *In the `source\training.py` script update entry_point to `entry_point="mnist.py"`*
-- This line will tell SageMaker to first install defined dependencies from `code/requirements.txt`, and then to upload all code inside of this folder to your container.
+* _In the `source\training.py` script uncomment the following line `source_dir = "code`_
+* _In the `source\training.py` script update entry_point to `entry_point="mnist.py"`_
+* This line will tell SageMaker to first install defined dependencies from `code/requirements.txt`, and then to upload all code inside of this folder to your container.
 
   Your estimator should now look like this
 
@@ -260,9 +258,9 @@ Now after some minutes, in the AWS console inside SageMaker and section [Trainin
 
 In this section, you will trigger training jobs from your local machine without the need to commit and push every time.
 
-- *Use or Create [AWS Access keys](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)*
-- *Install [AWS CLI](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)*
-- *[Set up](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) your AWS CLI*
+* _Use or Create_ [_AWS Access keys_](https://docs.aws.amazon.com/general/latest/gr/aws-sec-cred-types.html#access-keys-and-secret-access-keys)
+* _Install_ [_AWS CLI_](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+* [_Set up_](https://docs.aws.amazon.com/cli/latest/userguide/cli-chap-configure.html) _your AWS CLI_
 
 ```shell
  aws configure
@@ -272,7 +270,7 @@ In this section, you will trigger training jobs from your local machine without 
     Default output format [None]: json
 ```
 
-- *Create a virtual environment inside your project*
+* _Create a virtual environment inside your project_
 
 ```shell
     cd source
@@ -280,25 +278,23 @@ In this section, you will trigger training jobs from your local machine without 
     source venv/bin/activate
 ```
 
-- *Install required dependencies*
+* _Install required dependencies_
 
-```
-pip install -r requirements.txt
-```
+    pip install -r requirements.txt
 
-- *Navigate to [CloudFormation service stacks](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Feu-west-1.console.aws.amazon.com%2Fcloudformation%2Fhome%3Fregion%3Deu-west-1%26state%3DhashArgs%2523%252Fstacks%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fcloudformation&forceMobileApp=0&code_challenge=URwODm8u3qJ-reT4-VjJK0HUS2_il02O30dEoJR9G4w&code_challenge_method=SHA-256)*
-- *Select the stack created earlier and go to the output section*
+* _Navigate to_ [_CloudFormation service stacks_](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Feu-west-1.console.aws.amazon.com%2Fcloudformation%2Fhome%3Fregion%3Deu-west-1%26state%3DhashArgs%2523%252Fstacks%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fcloudformation&forceMobileApp=0&code_challenge=URwODm8u3qJ-reT4-VjJK0HUS2_il02O30dEoJR9G4w&code_challenge_method=SHA-256)
+* _Select the stack created earlier and go to the output section_
 
-<img src="images\output.png"  />
+<img src="images\\output.png"  />
 
-- *Copy the ExampleLocalCommand*
+* _Copy the ExampleLocalCommand_
 
 ```shell
 python training.py arn\:aws\:iam::xxxxxxx\:role/mlops-sagemaker-role bucket-name MODEL-NAME VERSION
 ```
 
-- *In the command line replace MODEL-NAME and VERSION and execute*
-- *Navigate to SageMaker Training jobs, check to see Manage Spot Training Savings*
+* _In the command line replace MODEL-NAME and VERSION and execute_
+* _Navigate to SageMaker Training jobs, check to see Manage Spot Training Savings_
 
 ![](images/spot-cost-2.png)
 
@@ -310,50 +306,42 @@ This architecture will enable us to quickly test our endpoint through a simple `
 
 ![](images/mlops_lambda.png)
 
-- *Install Chalice*
+* _Install Chalice_
 
   Go to the `lambda` folder and install `chalice`
 
-```
-pip install -r requirements-dev.txt
-```
+    pip install -r requirements-dev.txt
 
 or run
 
-```
-pip install chalice==1.20.0
-```
+    pip install chalice==1.20.0
 
-- *Navigate to your [SageMaker Endpoint](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Feu-west-1.console.aws.amazon.com%2Fsagemaker%2Fhome%3Fregion%3Deu-west-1%26state%3DhashArgs%2523%252Fendpoints%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fsagemaker&forceMobileApp=0&code_challenge=MSKAxc0JJQj_CobJpfJex4TeYhURJarE2euJ8d6Jfvg&code_challenge_method=SHA-256) in the AWS console and copy the name of the endpoint*
+* _Navigate to your_ [_SageMaker Endpoint_](https://signin.aws.amazon.com/signin?redirect_uri=https%3A%2F%2Feu-west-1.console.aws.amazon.com%2Fsagemaker%2Fhome%3Fregion%3Deu-west-1%26state%3DhashArgs%2523%252Fendpoints%26isauthcode%3Dtrue&client_id=arn%3Aaws%3Aiam%3A%3A015428540659%3Auser%2Fsagemaker&forceMobileApp=0&code_challenge=MSKAxc0JJQj_CobJpfJex4TeYhURJarE2euJ8d6Jfvg&code_challenge_method=SHA-256) _in the AWS console and copy the name of the endpoint_
 
 ![](images/mlops_endpoint.png)
 
-- *In the lambda\\.chalice\config.json update the value of the ENDPOINT_NAME environment variable with the name of your SageMaker endpoint*
+* _In the lambda\\.chalice\\config.json update the value of the ENDPOINT_NAME environment variable with the name of your SageMaker endpoint_
 
-```
-{
-  "version": "2.0",
-  "app_name": "predictor",
-  "autogen_policy": false,
-  "automatic_layer": true,
-  "environment_variables": {
-    "ENDPOINT_NAME": "name-of-your-sagemaker-endpoint"
-  },
-  "stages": {
-    "dev": {
-      "api_gateway_stage": "api"
+    {
+      "version": "2.0",
+      "app_name": "predictor",
+      "autogen_policy": false,
+      "automatic_layer": true,
+      "environment_variables": {
+        "ENDPOINT_NAME": "name-of-your-sagemaker-endpoint"
+      },
+      "stages": {
+        "dev": {
+          "api_gateway_stage": "api"
+        }
+      }
     }
-  }
-}
-```
 
-- *Deploy the Lambda function*
+* _Deploy the Lambda function_
 
 Let's now deploy this Lambda by running
 
-```
-chalice deploy --stage dev
-```
+    chalice deploy --stage dev
 
 Make sure to run this command from the `lambda` folder. If your deployment times out due to your connection, please add `--connection-timeout 360` to your command.
 
@@ -361,21 +349,17 @@ Our Lambda function expects to receive an image in the request body. It then res
 
 As we are exposing this Lambda function through REST API `@app.route("/", methods=["POST"])`, Chalice will deploy it behind the API Gateway that will route the incoming traffic to it.
 
-- *Trigger your Lambda*
+* _Trigger your Lambda_
 
 Now you can trigger this Lambda function by running included bash script
 
-```
-bash post.sh
-```
+    bash post.sh
 
 This script will download an image, and send a `POST` request to your Lambda. The response will contain probabilities for this image and prediction made by the deployed model.
 
-```
-{
-   "response" : {
-      "Probabilities:" : "[[-3.10787258e+01 -1.61031952e+02 -2.43714166e+00 -2.35641022e+01\n  -1.84978195e+02 -9.14689526e-02 -5.73226471e+01 -8.57289124e+01\n  -7.99111023e+01 -9.30446320e+01]]",
-      "This is your number:" : "5"
-   }
-}
-```
+    {
+       "response" : {
+          "Probabilities:" : "[[-3.10787258e+01 -1.61031952e+02 -2.43714166e+00 -2.35641022e+01\n  -1.84978195e+02 -9.14689526e-02 -5.73226471e+01 -8.57289124e+01\n  -7.99111023e+01 -9.30446320e+01]]",
+          "This is your number:" : "5"
+       }
+    }
