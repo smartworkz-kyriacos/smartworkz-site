@@ -4,7 +4,6 @@ bg_image = ""
 categories = ["Netlify", "Forestry", "GitHub", "Hugo"]
 date = 2022-10-25T22:00:00Z
 description = "Set up Generator, Versioning, CMS, and CDN "
-draft = true
 image = ""
 tags = []
 title = "Hugo with GitHub Pages, Forestry, and Nrtlify"
