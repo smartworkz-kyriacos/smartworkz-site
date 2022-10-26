@@ -12,8 +12,6 @@ type = "post"
 +++
 # Hugo on GitHub Pages with Forestry and Netlify
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/7d3e4337-98ef-4936-a41b-93a11e98b379/deploy-status)](https://app.netlify.com/sites/smartworkz/deploys)
-
 ![1665592517375](/images/1665592517375.png)
 
 Smartworkz's static (web) site is based on the following integrations:
