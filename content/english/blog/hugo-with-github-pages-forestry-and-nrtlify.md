@@ -23,7 +23,7 @@ Smartworkz's static (web) site is based on the following integrations:
 * [Forestry](https://forestry.io/) a static site CMS hosted service for daily content creation/editing
 * [Netlify](https://www.netlify.com/) a static file hosting serviice to watch Github for any changes and build/deploy as needed
 
-  ![1665575738841](image/README/1665575738841.png)
+  ![1665575738841](/images/1665575738841.png)
 
 ## Prerequisites
 
@@ -40,69 +40,69 @@ Smartworkz's static (web) site is based on the following integrations:
 
 ### _Navigate to your local Git repository_
 
-![1665575311635](image/README/1665575311635.png)
+![1665575311635](/images/1665575311635.png)
 
 ### `cmd` _in your File Explorer path and press the Enter key_
 
-![1665575439078](image/README/1665575439078.png)
+![1665575439078](/images/1665575439078.png)
 
 The command window prompt opens:
 
-![1665575506979](image/README/1665575506979.png)
+![1665575506979](/images/1665575506979.png)
 
 ### `code .` _in the prompt and press the Enter key_
 
-![1665575649406](image/README/1665575649406.png)
+![1665575649406](/images/1665575649406.png)
 
 The Visual Studio Code (VSC) application opens
 
 * _Trust the Authors and on the Menu click View and select Terminal_
 
-  ![1665575940981](image/README/1665575940981.png)
+  ![1665575940981](/images/1665575940981.png)
 
   The Git Bash terminal appears:
 
-  ![1665576000232](image/README/1665576000232.png)
+  ![1665576000232](/images/1665576000232.png)
 
 ### Clone a Hugo Template of this site
 
     This contains all the files used to generate the site, not the site itself.
     Later, will create another separate repository to host the static (web) site files
 
-![1665576136976](image/README/1665576136976.png)
+![1665576136976](/images/1665576136976.png)
 
 `git clone https://github.com/smartworkz-kyriacos/smartworkz-site.git`
 
 This clones the repository in the local git repository path
 
-![1665576298128](image/README/1665576298128.png)
+![1665576298128](/images/1665576298128.png)
 
 ### _`cd` into site_
 
-![1665576668407](image/README/1665576668407.png)
+![1665576668407](/images/1665576668407.png)
 
 `cd smartworkz-site`
 
 ### _Check status_
 
-![1665576391255](image/README/1665576391255.png)
+![1665576391255](/images/1665576391255.png)
 
 `git status`
 
 ### _Check directory structure_
 
-![1665576509518](image/README/1665576509518.png)
+![1665576509518](/images/1665576509518.png)
 
     ls
     ls -la
 
-### _Check smartworkz-site tree view_![1665576788318](image/README/1665576788318.png)
+### _Check smartworkz-site tree view_![1665576788318](/images/1665576788318.png)
 
 ### _Open and log in to your_ [_GitHub account_](https://github.com/)
 
 ### _Create a GitHub repository for the generated static (web) site files_
 
-![1665578273247](image/README/1665578273247.png)
+![1665578273247](/images/1665578273247.png)
 
 The name of this repository follows the format
 
@@ -112,7 +112,7 @@ Replace with your own `<USERNAME>`
 
 Return to the terminal and change to the local Git directory for your `<USERNAME>`.`github.io` hosting site `cmd` in and `code .` to open in VSC
 
-![1665579741660](image/README/1665579741660.png)
+![1665579741660](/images/1665579741660.png)
 
 ### Clone your previous GitHub Repository
 
@@ -120,15 +120,15 @@ Return to the terminal and change to the local Git directory for your `<USERNAME
 
 `git clone https://github.com/smartworkz-kyriacos/smartworkz-site.git`
 
-![1665579987941](image/README/1665579987941.png)
+![1665579987941](/images/1665579987941.png)
 
 ### _Check that the template site is functioning_
 
-![1665581649891](image/README/1665581649891.png) `hugo server -D`
+![1665581649891](/images/1665581649891.png) `hugo server -D`
 
 This will set up the site locally and allow it to be viewed at the address specified in the shell (http://localhost:1313). Observe the `/public` folder created:
 
-![1665582084746](image/README/1665582084746.png)
+![1665582084746](/images/1665582084746.png)
 
 ### _Generate the static files and push it to the `<USERNAME>.github.io` repository_
 
@@ -187,23 +187,23 @@ Changes will be live shortly at your  `https://<USERNAME>.github.io` with any ch
 
 ### _Open and log in to your_ [_Forestry account_](https://forestry.io/)
 
-![1665589284887](image/README/1665589284887.png)
+![1665589284887](/images/1665589284887.png)
 
 ### _Click Add Site, Select Hugo as your static site generator_
 
-![1665589515586](image/README/1665589515586.png)
+![1665589515586](/images/1665589515586.png)
 
 ### Select GitHub as your git provider
 
-![1665589621922](image/README/1665589621922.png)
+![1665589621922](/images/1665589621922.png)
 
 ### _Choose Git repository_
 
-![1665589776333](image/README/1665589776333.png)
+![1665589776333](/images/1665589776333.png)
 
 GitHub Pages hosts  your website using Hugo and Forestry.io as your CMS. Any changes you make using Forestry will auto-commit to your project repository.
 
-![1665590429903](image/README/1665590429903.png)
+![1665590429903](/images/1665590429903.png)
 
 ### _`git pull` once you're done editing your site content with Forestry._
 
