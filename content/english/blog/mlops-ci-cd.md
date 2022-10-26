@@ -1,5 +1,5 @@
 +++
-author = "Kyriacos Antoniades"
+author = "Kyrie"
 bg_image = ""
 categories = ["GitHub", "Git", "MLOps", "Data Science", "Data Engineering"]
 date = 2022-10-25T22:00:00Z
