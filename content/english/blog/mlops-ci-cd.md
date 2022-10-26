@@ -13,6 +13,7 @@ type = "post"
 # MLOps with CI/CD
 
 **A hands-on lab to train, deploy, and host your models on AWS.**
+[![Netlify Status](https://api.netlify.com/api/v1/badges/50131926-bd9b-4c67-96ab-643947664611/deploy-status)](https://app.netlify.com/sites/smartworkz-site/deploys)
 
 * We will download code from an S3 bucket to use throughout this workshop.
 * It contains image classification (MNIST) code using ConvNets based on [PyTorch examples,](https://github.com/pytorch/examples) and a CloudFormation stack.
