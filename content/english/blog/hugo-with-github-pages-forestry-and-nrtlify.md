@@ -1,3 +1,9 @@
+---
+title: Hugo on GitHub Pages with Forestry and Netlify
+date: 2022-10-26 22:00:00 +0000
+image: "/images/JAMStack.png"
+
+---
 +++
 author = "Kyrie"
 bg_image = ""
