@@ -1,6 +1,6 @@
 ---
-title: ''
-date: 2022-10-27 11:00:00 +0000
+title: Amazon SageMaker Workshop
+date: 2022-10-27T11:00:00.000+00:00
 image: "/images/sagemaker.png"
 
 ---
